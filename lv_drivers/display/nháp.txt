@@ -1,0 +1,21 @@
+/*1 bit per pixel*/
+else if(vinfo.bits_per_pixel == 1) {
+    uint8_t *fbp8 = (uint8_t *)fbp;
+    int32_t x;
+    int32_t y;
+    
+    // Lật chiều dọc: Thay đổi từ y = act_y1 đến y = act_y2
+    for(y = act_y2; y >= act_y1; y--) {
+        for(x = act_x1; x <= act_x2; x++) {
+            location = (x + vinfo.xoffset) + (y + vinfo.yoffset) * vinfo.xres;
+            byte_location = location / 8; /* find the byte we need to change */
+            bit_location = location % 8; /* inside the byte found, find the bit we need to change */
+            fbp8[byte_location] &= ~(((uint8_t)(1)) << bit_location);
+            fbp8[byte_location] |= ((uint8_t)(color_p->full)) << bit_location;
+            color_p++;
+        }
+
+        // Adjust color_p offset for the next line
+        color_p += area->x2 - act_x2;
+    }
+}
