@@ -1,7 +1,5 @@
 #include "lvgl/lvgl.h"
-//#include "lvgl/demos/lv_demos.h"
 #include "lv_drivers/display/fbdev.h"
-//#include "lv_drivers/indev/evdev.h"
 #include <unistd.h>
 #include <pthread.h>
 #include <time.h>
@@ -9,12 +7,6 @@
 #include "lv_demos/lv_demo.h"
 
 #define DISP_BUF_SIZE (128 * 64)
-
-// void lv_show_img(lv_obj_t * img, const lv_img_dsc_t img_dat) {
-//     lv_obj_clean(img);
-//     lv_img_set_src(img, &img_dat);
-//     lv_obj_center(img);
-// }
 
 void fbdev_flush(lv_disp_drv_t * drv, const lv_area_t * area, lv_color_t * color_p);
 
