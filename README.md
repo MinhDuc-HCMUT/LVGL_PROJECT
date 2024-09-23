@@ -1,4 +1,5 @@
 ### 1. Configure the FB device in Linux Board (dts,config)
+---
 ### 2. Fetch the resources:
 *Create a folder in the root directory to store the official source code:*
 ```bash
@@ -19,6 +20,7 @@ luckfox@luckfox:~$ cd lvgl_project/
 luckfox@luckfox:~/lvgl_project$ mkdir fbv_loadbitmap
 luckfox@luckfox:~/lvgl_project$ cd fbv_loadbitmap/
 ```
+---
 ### 3.Copy file resources:
 * *Copy the **lvgl** and **lv_drivers** directories from the **root** directory*
 * *Copy **main.c** and **Makefile** from **lv_port_linux_frame_buffer***
@@ -43,6 +45,7 @@ drwxrwxr-x 12 luckfox luckfox  4096 12月 27 19:14 lvgl
 -rw-rw-r--  1 luckfox luckfox  2350 12月 27 19:14 main.c
 -rw-rw-r--  1 luckfox luckfox  2321 12月 27 19:14 Makefile
 ```
+---
 ### 4.Modify 
 **lv_conf.h**
 1. Enable
